@@ -1,6 +1,7 @@
 package com.example.dynamicprofileordering.ui
 
 import android.os.Bundle
+import android.view.View
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -47,6 +48,7 @@ class MainActivity : AppCompatActivity() {
                         val currentUser = users[index]
                         userAdapter.updateUser(currentUser)
                     }
+                    binding.nextButton.visibility = if (index >= users.size - 1) View.GONE else View.VISIBLE
                 }
             }
         }
